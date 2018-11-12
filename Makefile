@@ -11,9 +11,9 @@ bin/minibank: $(shell find $(SRCDIR) -name '*.go')
 
 minibank: bin/minibank
 	docker build -t minibank:$(VERSION) -f Dockerfile bin
+	
+mysql: 
+	docker pull mariadb:latest
 
-mysql:
-	docker pull maiadb:latest
-
-run-images:
+run-images: minibank mysql
 	./run.sh

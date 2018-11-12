@@ -1,4 +1,4 @@
-from alpine:2.8
+from alpine:3.8
 
 COPY minibank /src/
 
